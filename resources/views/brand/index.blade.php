@@ -1,7 +1,9 @@
 @extends('layouts.master')
 @section('content')
 <div id="brands" class="container">
+    <!-- Your existing code -->
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#brandModal">Add <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+    <a href="{{ route('brand.chart') }}" class="btn btn-primary">Generate Chart</a>
     <div class="card-body" style="height: 210px;">
         <input type="text" id='brandSearch' placeholder="--search--">
     </div>
@@ -79,4 +81,9 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ asset('js/brand.js') }}"></script>
 @endsection

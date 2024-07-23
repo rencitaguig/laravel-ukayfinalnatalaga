@@ -11,6 +11,12 @@ use App\Imports\BrandsImport;
 
 class BrandController extends Controller
 {
+    public function showChartPage()
+    {
+        $brands = Brand::all();
+        return view('brand.chart', compact('brands'));
+    }
+
     public function index()
     {
         $brands = Brand::orderBy('id', 'DESC')->get();

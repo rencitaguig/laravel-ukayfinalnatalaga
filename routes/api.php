@@ -21,6 +21,8 @@ Route::post('/brands/import', [BrandController::class, 'import']);
 Route::post('/products/import', [ProductController::class, 'import']);
 Route::get('/api/products', [ProductController::class, 'index']);
 
+Route::get('/brand-chart', [BrandController::class, 'showChartPage'])->name('brand.chart');
+
 
 
 
