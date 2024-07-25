@@ -48,5 +48,5 @@ class AnnouncementsImport implements ToCollection, WithHeadingRow
     
         return $imagePaths;
     }
-    
+   
 }

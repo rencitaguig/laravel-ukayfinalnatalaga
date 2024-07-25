@@ -117,7 +117,8 @@ class AnnouncementController extends Controller
     // }
     public function import(Request $request)
     {
-        $request->validate([
+        $request->validate
+        ([
             'importFile' => ['required', 'file', 'mimes:xlsx,xls']
         ]);
     

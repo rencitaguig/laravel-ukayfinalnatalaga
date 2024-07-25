@@ -32,7 +32,7 @@ $(document).ready(function () {
                     var imgPaths = data ? data.split(',') : [];
                     var imagesHTML = '';
                     imgPaths.forEach(function (path) {
-                        if (path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.png')) {
+                        if (path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.png') || path.endsWith('.gif') || path.endsWith('.svg')) {
                             imagesHTML += `<img src="${path}" width="50" height="60" style="margin-right: 5px;">`;
                         }
                     });
@@ -99,7 +99,7 @@ $(document).ready(function () {
                 var imagesHTML = '';
                 if (data.logo) {
                     data.logo.split(',').forEach(function (path) {
-                        if (path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.png')) {
+                        if (path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.png') || path.endsWith('.gif') || path.endsWith('.svg')) {
                             imagesHTML += `<img src="${path}" width='200px' height='200px'>`;
                         }
                     });
@@ -140,8 +140,8 @@ $(document).ready(function () {
         });
     });
 
-        // Handle Delete Announcement button click
-        $('#announcementTable tbody').on('click', 'a.deleteBtn', function (e) {
+    // Handle Delete Announcement button click
+    $('#announcementTable tbody').on('click', 'a.deleteBtn', function (e) {
         e.preventDefault();
         var id = $(this).data('id');
         var $row = $(this).closest('tr');
