@@ -115,14 +115,17 @@ class AnnouncementController extends Controller
     
     //     return response()->json(['success' => 'Announcements imported successfully.']);
     // }
-    public function import (Request $request)
+    public function import(Request $request)
     {
-      $request ->validate([
-          'importFile' => ['required', 'file', 'mimes:xlsx,xls']
-      ]);
- 
-      Excel::import(new AnnouncementsImport, $request->file('importFile'));
- 
-      return redirect()->back()->with('success', 'Announcement imported successfully');
+        $request->validate([
+            'importFile' => ['required', 'file', 'mimes:xlsx,xls']
+        ]);
+    
+        Excel::import(new AnnouncementsImport, $request->file('importFile'));
+    
+        return redirect()->back()->with('success', 'Announcements imported successfully.');
     }
+
+    
+    
 }
